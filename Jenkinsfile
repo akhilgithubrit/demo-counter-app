@@ -10,10 +10,10 @@ pipeline{
                  git branch: 'main', url: 'https://github.com/akhilgithubrit/demo-counter-app.git'
             }
         }
-        stage('UNIT Testing'){
+        stage('build'){
             
             steps{
-                 sh 'mvn test'
+                 sh 'mvn package'
             }
         }
         
