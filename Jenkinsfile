@@ -10,6 +10,24 @@ pipeline{
                  git branch: 'main', url: 'https://github.com/akhilgithubrit/demo-counter-app.git'
             }
         }
+        stage('Unit Testing'){
+            
+            steps{
+                 sh 'mvn test'
+            }
+        }
+        stage('Integration testing'){
+            
+            steps{
+                 sh 'mvn verify -DskipUnitTests
+            }
+        }
+        stage('Maven Build'){
+            
+            steps{
+                 sh 'mvn clean install'
+            }
+        }
     }
 }    
        
