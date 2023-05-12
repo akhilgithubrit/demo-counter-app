@@ -26,6 +26,12 @@ pipeline{
                  sh 'mvn verify -DskipUnitTests'
             }
         }
+        stage('Maveb Build'){
+            
+            steps{
+                 sh 'mvn clean install'
+            }
+        }
     }
       
 }    
